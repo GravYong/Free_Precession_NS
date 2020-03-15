@@ -1,0 +1,143 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4311,        133]
+NotebookOptionsPosition[      3892,        117]
+NotebookOutlinePosition[      4231,        132]
+CellTagsIndexPosition[      4188,        129]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"expression", "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Cos", "[", "x", "]"}], 
+      RowBox[{"Sin", "[", "y", "]"}]}], "+", 
+     RowBox[{
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        SuperscriptBox["x", "3"], 
+        RowBox[{"Sin", "[", "x", "]"}]}], "]"}], "*", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Cos", "[", "x", "]"}], 
+         RowBox[{"Sin", "[", "y", "]"}]}], "+", 
+        RowBox[{"Exp", "[", 
+         RowBox[{
+          SuperscriptBox["x", "3"], 
+          RowBox[{"Sin", "[", "x", "]"}]}], "]"}]}], ")"}], 
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Cos", "[", "x", "]"}], 
+         RowBox[{"Sin", "[", "y", "]"}]}], "+", 
+        RowBox[{
+         RowBox[{"Exp", "[", 
+          RowBox[{
+           SuperscriptBox["x", "3"], 
+           RowBox[{"Sin", "[", "x", "]"}]}], "]"}], "*", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Cos", "[", "x", "]"}], 
+            RowBox[{"Sin", "[", "y", "]"}]}], "+", 
+           RowBox[{"Exp", "[", 
+            RowBox[{
+             SuperscriptBox["x", "3"], 
+             RowBox[{"Sin", "[", "x", "]"}]}], "]"}], "-", 
+           RowBox[{"Tan", "[", "x", "]"}]}], ")"}]}]}], "]"}]}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pw", "=", 
+   RowBox[{"PageWidth", "/.", 
+    RowBox[{"Options", "[", "$Output", "]"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"SetOptions", "[", 
+   RowBox[{"$Output", ",", 
+    RowBox[{"PageWidth", "\[Rule]", "Infinity"}]}], "]"}], ";"}], "\n", 
+ RowBox[{"FortranForm", "[", 
+  RowBox[{"expression", "//.", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"1.", " ", "x_"}], "\[Rule]", "x"}], ",", 
+     RowBox[{
+      RowBox[{"E", "^", "x_"}], "\[RuleDelayed]", 
+      RowBox[{"exp", "[", "x", "]"}]}], ",", 
+     RowBox[{
+      RowBox[{"Sin", "[", "x_", "]"}], "\[RuleDelayed]", 
+      RowBox[{"sin", "[", "x", "]"}]}], ",", 
+     RowBox[{
+      RowBox[{"Cos", "[", "x_", "]"}], "\[RuleDelayed]", 
+      RowBox[{"cos", "[", "x", "]"}]}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Tan", "[", "x_", "]"}], "\[RuleDelayed]", 
+      RowBox[{"tan", "[", "x", "]"}]}], ",", 
+     RowBox[{
+      RowBox[{"Cot", "[", "x_", "]"}], "\[RuleDelayed]", 
+      RowBox[{"1", "/", 
+       RowBox[{"tan", "[", "x", "]"}]}]}]}], "}"}]}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{"SetOptions", "[", 
+   RowBox[{"$Output", ",", 
+    RowBox[{"PageWidth", "\[Rule]", "pw"}]}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.793151865970119*^9, 3.79315186994382*^9}, {
+  3.793152001022976*^9, 3.7931521262864428`*^9}, {3.793152162660952*^9, 
+  3.793152175547492*^9}, {3.793152231296687*^9, 3.793152258568077*^9}, {
+  3.793152301217124*^9, 3.79315234999483*^9}},
+ CellLabel->"In[43]:=",ExpressionUUID->"16a39b02-fc21-498e-b622-e5f9fcdbe41e"],
+
+Cell["\<\
+cos(x)*sin(y) + exp(x**3*sin(x) + cos(x)*sin(y) + \
+exp(x**3*sin(x))*(exp(x**3*sin(x)) + cos(x)*sin(y) - \
+tan(x)))*(exp(x**3*sin(x)) + cos(x)*sin(y))\
+\>", "Output",
+ CellChangeTimes->{
+  3.79315225949288*^9, {3.793152308142128*^9, 3.7931523522025003`*^9}},
+ CellLabel->
+  "Out[46]//FortranForm=",ExpressionUUID->"0dc6fe12-cddd-4072-a6b2-\
+266d0da2c006"]
+}, Open  ]]
+},
+WindowSize->{679, 911},
+WindowMargins->{{Automatic, -809}, {41, Automatic}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 2928, 81, 268, "Input",ExpressionUUID->"16a39b02-fc21-498e-b622-e5f9fcdbe41e"],
+Cell[3511, 105, 365, 9, 45, "Output",ExpressionUUID->"0dc6fe12-cddd-4072-a6b2-266d0da2c006"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
